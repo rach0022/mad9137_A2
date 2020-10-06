@@ -15,14 +15,14 @@ Clicking on any of the cells in table will transition the user to a second view 
 
 ### Storyboard
 
-- [ ] Create a TableViewController and set it as the initial view of the application. (2pt.)
-- [ ] Add a new swift file for a custom UITableViewController class. (1pt.)
-- [ ] Set the custom class for your TableViewController. (1pt.)
-- [ ] Embed a NavigationController in the TableViewController. (1pt.)
+- [x] Create a TableViewController and set it as the initial view of the application. (2pt.)
+- [x] Add a new swift file for a custom UITableViewController class. (1pt.)
+- [x] Set the custom class for your TableViewController. (1pt.)
+- [x] Embed a NavigationController in the TableViewController. (1pt.)
 - [ ] Connect the Prototype Cell in the TableView to the regular ViewController with a Segue. (1pt.)
-- [ ] In the second ViewController add 2 Labels and a TextView object. (3pt.)
-- [ ] Connect the Labels and TextView to IBOutlets. (3pt.)
-- [ ] Edit the TextView Attributes to turn Editable off, and Phone Number, Link and Address on. (4pt.)
+- [x] In the second ViewController add 2 Labels and a TextView object. (3pt.)
+- [x] Connect the Labels and TextView to IBOutlets. (3pt.)
+- [x] Edit the TextView Attributes to turn Editable off, and Phone Number, Link and Address on. (4pt.)
 
 ### Schedule (TableViewController)
 
