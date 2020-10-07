@@ -37,7 +37,7 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // return the number of events as the number of rows
         return self.tableSchedule.eventCount
     }
 
@@ -53,6 +53,28 @@ class ScheduleTableViewController: UITableViewController {
         
 
         return cell
+    }
+    
+    
+    // Pass the event from one cell to the next view
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //first check if its the right segue for ShowEventDetails
+        if segue.identifier == "ShowEventDetails" {
+            // to make sure I can use the functions from the EventViewController I need to select it
+            // as the the type
+            let destinationViewController = segue.destination as? EventViewController
+            
+            // now check the index path and if we have a value lets send that event to the next view
+            if let indexPathRow = tableView.indexPathForSelectedRow?.row {
+                destinationViewController?.selectedEvent = self.tableSchedule.eventArray[indexPathRow]
+            }
+        }
     }
     
 
@@ -90,28 +112,4 @@ class ScheduleTableViewController: UITableViewController {
         return true
     }
     */
-
-    
-    // Pass the event from one cell to the next view
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-        //first check if its the right segue for ShowEventDetails
-        if segue.identifier == "ShowEventDetails" {
-            // to make sure I can use the functions from the EventViewController I need to select it
-            // as the the type
-            let destinationViewController = segue.destination as? EventViewController
-            
-            // now check the index path and if we have a value lets send that event to the next view
-            if let indexPathRow = tableView.indexPathForSelectedRow?.row {
-                destinationViewController?.selectedEvent = self.tableSchedule.eventArray[indexPathRow]
-            }
-        }
-    }
-    
-
 }
