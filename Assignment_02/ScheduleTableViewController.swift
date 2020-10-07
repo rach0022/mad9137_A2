@@ -9,6 +9,8 @@
 import UIKit
 
 class ScheduleTableViewController: UITableViewController {
+    //creating a (non-optional) scheudule object
+    let tableSchedule: Schedule = Schedule()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,29 +20,41 @@ class ScheduleTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //adding at least 3 default test events
+        self.tableSchedule.addNewEvent(title: "Dentist Appointment", description: "Teeth & Gum Cleaning", dateString: "2020/05/08 16:43")
+        self.tableSchedule.addNewEvent(title: "Doctors Appointment", description: "Yearly Physical", dateString: "2020/06/14 16:43")
+        self.tableSchedule.addNewEvent(title: "Godzilla Strikes London", description: "Predicted time the King of Monsters will reach London, England", dateString: "2020/07/18 16:43")
+        
+    
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.tableSchedule.eventCount
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventTableCell", for: indexPath)
 
         // Configure the cell...
+        if let title =  self.tableSchedule.eventArray[indexPath.row].title {
+            // show the event title in the cell 
+            cell.textLabel?.text = "#\(indexPath.row + 1) \(title)"
+        }
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,14 +91,27 @@ class ScheduleTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
+    // Pass the event from one cell to the next view
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        //first check if its the right segue for ShowEventDetails
+        if segue.identifier == "ShowEventDetails" {
+            // to make sure I can use the functions from the EventViewController I need to select it
+            // as the the type
+            let destinationViewController = segue.destination as? EventViewController
+            
+            // now check the index path and if we have a value lets send that event to the next view
+            if let indexPathRow = tableView.indexPathForSelectedRow?.row {
+                destinationViewController?.selectedEvent = self.tableSchedule.eventArray[indexPathRow]
+            }
+        }
     }
-    */
+    
 
 }

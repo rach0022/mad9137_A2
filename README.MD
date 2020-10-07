@@ -19,27 +19,27 @@ Clicking on any of the cells in table will transition the user to a second view 
 - [x] Add a new swift file for a custom UITableViewController class. (1pt.)
 - [x] Set the custom class for your TableViewController. (1pt.)
 - [x] Embed a NavigationController in the TableViewController. (1pt.)
-- [ ] Connect the Prototype Cell in the TableView to the regular ViewController with a Segue. (1pt.)
+- [x] Connect the Prototype Cell in the TableView to the regular ViewController with a Segue. (1pt.)
 - [x] In the second ViewController add 2 Labels and a TextView object. (3pt.)
 - [x] Connect the Labels and TextView to IBOutlets. (3pt.)
 - [x] Edit the TextView Attributes to turn Editable off, and Phone Number, Link and Address on. (4pt.)
 
 ### Schedule (TableViewController)
 
-- [ ] Create a (non-optional) Schedule object to use in your tableViewController class. (1pt.)
-- [ ] Add at least 3 default test events to the schedule using the addNewEvent() function. (3pt.)
-- [ ] Use the eventArray count in the schedule object to set the number of rows for the table. (1pt.)
-- [ ] Set each TableViewCell label text to the title of one of the events from the schedule. (2pt.)
-- [ ] When the user taps on a cell in the table the application must pass the corresponding event object to the destination viewController’s Event property. (4pt.)
+- [x] Create a (non-optional) Schedule object to use in your tableViewController class. (1pt.)
+- [x] Add at least 3 default test events to the schedule using the addNewEvent() function. (3pt.)
+- [x] Use the eventArray count in the schedule object to set the number of rows for the table. (1pt.)
+- [x] Set each TableViewCell label text to the title of one of the events from the schedule. (2pt.)
+- [x] When the user taps on a cell in the table the application must pass the corresponding event object to the destination viewController’s Event property. (4pt.)
 
 ### Event Info (ViewController)
 
-- [ ] Create an optional Event property in this class to hold the data passed from the tableView. (1pt.)
-- [ ] In the viewDidLoad() function set the title and date labels, and the description textView to the data stored within the optional Event object. (3pt.)
+- [x] Create an optional Event property in this class to hold the data passed from the tableView. (1pt.)
+- [x] In the viewDidLoad() function set the title and date labels, and the description textView to the data stored within the optional Event object. (3pt.)
 
 ### Project
 
-- [ ] Clear and descriptive naming of variable, functions and identifiers (2pt.)
-- [ ] Well commented code describing all main functionality (2pt.)
-- [ ] Project compiles and runs without errors (1pt.)
+- [x] Clear and descriptive naming of variable, functions and identifiers (2pt.)
+- [x] Well commented code describing all main functionality (2pt.)
+- [x] Project compiles and runs without errors (1pt.)
 
